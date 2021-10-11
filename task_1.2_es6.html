@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>task_1.2_es6</title>
+</head>
+
+<body>
+    <script>
+         class Post {
+            constructor(author, text, date) {
+                this.author = author;
+                this.text = text;
+                this.date = date;
+            }
+
+            edit(text) {
+                this.text = text;
+            }
+        }
+
+        const new_Post = new Post('new_Post', 'text', new Date());
+        new_Post.edit('new_text');
+
+        console.log(new_Post);
+
+
+        class AttachedPost extends Post {
+            constructor(author, text, date) {
+                super(author, text, date);
+                this.highlighted = false;
+            }
+
+             makeTextHighlighted(){
+                this.highlighted = true;
+            }
+        }
+
+
+        const new_AttachedPost = new AttachedPost('user_2', 'AttachedPost text', new Date());
+        new_AttachedPost.makeTextHighlighted();
+        new_AttachedPost.edit('new AttachedPost text');
+        console.log(new_AttachedPost);
+
+
+    </script>
+</body>
+
+</html>
